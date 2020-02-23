@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="webfont.css" rel="stylesheet" type="text/css"> 
+    <link href="base.css" rel="stylesheet" type="text/css"> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="index.js"></script>
+    <script>
+        (function () {
+          document.documentElement.className += " wf-inactive";
+          // Optimization for Repeat Views
+          if (sessionStorage.foutFontsLoaded) {
+            document.documentElement.classList.remove("wf-inactive");
+            document.documentElement.classList.add("wf-active");
+            return;
+          }
+    
+          var fontA = new FontFaceObserver("Amstelvar 1.1 VF", {});
+    
+    
+          Promise.all([fontA.load()]).then(function () {
+            alert(document.documentElement.getAttribute("class"));
+            document.documentElement.classList.remove("wf-inactive");
+            document.documentElement.classList.add("wf-active");
+            alert(document.documentElement.getAttribute("class"));
+    
+            // Optimization for Repeat Views
+            sessionStorage.foutFontsLoaded = true;
+          });
+        })();
+      </script>
+</head>
+<body>
+    
+<div class="container">
+    <h1>The evolution of typography with variable fonts</h1>
+    <h2>Words have power, and typography is their voice</h2>
+    <p class="section1">For centuries, type has been how we ‘hear’ what we read.
+         It’s also generally understood that typefaces and typography 
+         are a core element of branding, of expression, of vocal range. Great typography 
+         influences understanding, mood, and meaning in countless ways and is an essential
+          part of design. Unfortunately, for many years after the advent of the web, we 
+          were unable to apply all but the most basic of typographic design to online content. 
+          With the ability to use real fonts and OpenType features—like ligatures, specific figure sets, 
+          fractions, and true kerning—the typographic landscape improved tremendously. But the reality of
+           viewing content on the web dictates that speed is the most critical aspect of design—so we’ve 
+           traded typographic ‘vocal range’ for page speed. That means fewer font weights and reduced 
+           brand fidelity and voice.</p>
+</div>
+<div>
+       <h2> Web design, reinvented</h2>
+            <pre>
+            transform
+            18 files, over 288k
+            into just
+            1 file
+            84k
+        </pre>
+           <p> While the technology is still maturing and type designers are working to become more fluent in this new way of working, the promise for design on the web is ground-breaking. The typical scenario would be to constrain any given design to 3-5 different fonts to represent every aspect of a site’s design language and voice—including every permutation for body copy and headings. At its simplest implementation, variable fonts would give us the freedom to use different weights for every level of heading—greatly increasing their clarity and readability.</p>
+            
+            <p>
+            One could also use slightly narrower character widths for headings or on data-dense displays of information. In fact the entire typographic system could be designed to be proportional: weight and width could become multipliers on the standard body copy settings. Doing so would allow those aspects to scale easily along with the body copy should its settings change based on screen size or user preference. All of this with an accompanying increase in performance due to fewer HTTP requests (fewer font files) and an overall savings of data to download (though that will vary by font and compression used).
+
+        </p>
+
+<p>           But while these freedoms allow us to be more expressive, some of the really interesting capabilities will help transform the reading experience itself. This page has been set with a new variable font version of FF Meta, the classic sans-serif design by Erik Spiekermann first released in 1991. Even with only one axis of variation (weight) of both roman and italic variants, a wonderful range of voice can be achieved with massive gains in performance: 18 files and over 288k replaced with a single file of only 84k.</p> 
+            
+           <h2> Reinvented reading on screen</h2>
+           <p> [Meta] has to do more than look pretty: it has to work pretty hard</p>
+            <p>Erik Spiekermann</p>
+
+            <p>Some of the biggest challenges in creating a good reading experience are tied to the lack of finesse in proportion and fine details. The combination of modern CSS and OpenType features and variations presents a powerful combination. Being able to set features like ligatures and hyphenation based on language, turn hyphenation on and off based on screen size, and even tailor the character width on the smallest screens in order to fit more characters per line without reducing font size can make dramatic improvements in the smoothness and comfort of the reading experience.
+            </p>
+            <h2>Ready for a close-up</h2>
+            <p>18th century cut of Garamond cut in optical sizes. The first image is at 6pt size, the second is at 72. Note the difference in stroke contrast. It’s much more refined in the larger size.
+            Another feature that was common in metal type but lost in translation to photo-typesetting and digital was optical sizing (well, some designers do still create separate optical sizes for different ranges, but it’s rare and somewhat limited). Not as often found on sans-serif designs, but in decades past (in truth, for centuries), it was quite common for the physically smaller sizes of a typeface to be cut with slightly heavier strokes, more open bowls and counters, and in some cases even wider apertures in order to preserve readability. Newspapers in particular found this critical to ensure lines didn’t get lost or letters didn’t suffer too greatly from ink gain.
+            Optical sizing has made a return in variable fonts, and can be automatically applied where available, or set explicitly by the web designer or developer. As mentioned, it’s not as frequent a feature in sans-serif typefaces like this one, but can be used to quite dramatic effect in higher-stroke-contrast serif designs.
+        </p>
+           <h2> Polish and poise</h2>
+           <p>
+            With the benefits already discussed, the case for variable fonts is pretty compelling. But good typography isn’t all there is to great design. The range of axes like width and weight give us tremendous freedom to embrace more editorial design on the web without having to load an exorbitant number of file assets. And since we already have those few required variable fonts in place, the opportunity is to expose them for use by content publishers themselves. Imagine a role for designers inside the Content Management System (or CMS) where the website is housed. That designer could use some simple controls built into the CMS that would allow them to typeset specific headlines or pull-quotes, enabling a whole new level of design much like what we have in print, without having to write custom code every time.
+        </p>   
+            <h2>We may still be at the dawn of this new era, but it’s future is certainly bright</h2>
+            <p>As of May 2018, 3 out of 4 major web browsers already support variable fonts, in addition to both dominant mobile platforms (check support on caniuse.com). With that in mind, we’re ready to start lighting up the web today.
+            </p>
+            
+        </div>
+</body>
+</html>
